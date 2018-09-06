@@ -14,10 +14,11 @@ trim_iso <- function(id)
 	return(result)
 }
 
-# calculate STQ numbers and positions based on AA seq
-stq_num_pos <- function(seq)
+# General function to return postions of a given pair of AA from a AA seq
+# e.g. calculate STQ numbers and positions based on AA seq
+aa_num_pos <- function(seq, pattern="[ST]Q")
 {
-	stqs <- unlist(gregexpr("[ST]Q", seq))
+	stqs <- unlist(gregexpr(pattern, seq))
 	if (length(stqs) == 1 && stqs == -1)
 		return(c("0", "", ""))
 	else
@@ -34,20 +35,39 @@ stq_num_pos <- function(seq)
 		aas <- paste(aas, collapse=",")
 		return(c(num, pos, aas))
 	}
-	
 }
 
-# temporary code
-df$stq_num <- 0
-df$stq_pos <- ""
-df$stq_aa <- ""
-for (i in 1:nrow(df))
+# calculate every pair of AA occupacy in any given proteome sequence vector
+pair_mat <- function(pro_seq_vec)
 {
-	cat(i, "\r")
-	vec <- stq_num_pos(df$pro_seq[i])
-	df$stq_num[i] <- as.numeric(vec[1])
-	df$stq_pos[i] <- vec[2]
-	df$stq_aa[i] <- vec[3]
+	proAAList <- c("A", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "P",
+				   "Q", "R", "S", "T", "V", "W", "Y")
+	aaPairMat <- data.frame(first_aa=character(400), second_aa=character(400),
+					pair_sum=integer(400), stringsAsFactors=FALSE)
+	aa_seq_vec <- pro_seq_vec
+	currRow <- 1
+	for (i in proAAList)
+	{
+		for(j in proAAList)
+		{
+			aaPairMat$first_aa[currRow] <- i
+			aaPairMat$second_aa[currRow] <- j
+			currSum <- 0
+			currPair <- paste(c(i,j), collapse="")
+			for (k in 1:length(aa_seq_vec))
+			{
+				cat("Pair:", currPair, "(", currRow, ")", " Seq:", k, "\r")
+				result <- unlist(gregexpr(currPair, aa_seq_vec[k]))
+				resultLen <- length(result)
+				currSum <- currSum + ifelse((resultLen == 1 && result == -1), 0, resultLen)
+			}
+			aaPairMat$pair_sum[currRow] <- currSum
+			currRow <- currRow + 1
+		}
+	}
+	cat("\n")
+	return(aaPairMat)
 }
-cat("\n")
 
+
+# ===== temporary code ======
