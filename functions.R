@@ -71,3 +71,6 @@ pair_mat <- function(pro_seq_vec)
 
 
 # ===== temporary code ======
+pheatmap(log(df), main="log(total number of each pair instance)")
+
+
