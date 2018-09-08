@@ -71,4 +71,3 @@ pair_mat <- function(pro_seq_vec)
 
 
 # ===== temporary code ======
-pheatmap(log(df), color=inferno(11), main="log(Number of each instance)")
