@@ -37,6 +37,35 @@ aa_num_pos <- function(seq, pattern="[ST]Q")
 	}
 }
 
+# calculate relative coordinates
+# gap is 181 for budding yeast, 190 for Ce and 155 for mouse
+# coordinate format: x1,y1;x2,y2;...xn,yn;
+calc_coordinates <- function(seq, pattern="[ST]Q", gap=181, scale_to=10)
+{
+	locs <- unlist(gregexpr(pattern, seq))
+	locsLen <- length(locs)
+	if (locsLen == 1 && locs == -1)
+		return(as.character(NA))
+	else
+	{
+		result <- ""
+		seqLen <- nchar(seq)
+		locs <- c(-gap, locs, gap+seqLen)
+		scaleFactor <- gap / scale_to
+		# plot(x = scale_to, y = scale_to, xlim=c(0, scale_to), ylim=c(0, scale_to))
+		for (i in 2:(locsLen+1))
+		{
+			currX <- locs[i] - locs[i-1]
+			currY <- locs[i+1] - locs[i]
+			currX <- ifelse(currX > gap, scale_to, round(currX/scaleFactor))
+			currY <- ifelse(currY > gap, scale_to, round(currY/scaleFactor))
+		# 	points(x = currX, y = currY)
+			result <- paste(c(result,currX,",",currY,";"), sep="", collapse="")
+		}
+		return(result)
+	}
+}
+
 # calculate every pair of AA occupacy in any given proteome sequence vector
 pair_mat <- function(pro_seq_vec)
 {
@@ -69,5 +98,14 @@ pair_mat <- function(pro_seq_vec)
 	return(aaPairMat)
 }
 
+# trim the last asterisk symbol from all protein sequences
+trim_last_asterisk <- function(seq)
+{
+	seqLen <- nchar(seq)
+	lastChar <- substr(seq, seqLen, seqLen)
+	return (ifelse(lastChar == "*", substr(seq, 1, seqLen-1), seq))
+}
 
 # ===== temporary code ======
+
+
