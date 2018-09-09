@@ -40,7 +40,8 @@ aa_num_pos <- function(seq, pattern="[ST]Q")
 # calculate relative coordinates
 # gap is 181 for budding yeast, 190 for Ce and 155 for mouse
 # coordinate format: x1,y1;x2,y2;...xn,yn;
-calc_coordinates <- function(seq, pattern="[ST]Q", gap=181, scale_to=10)
+# for the ease of python, scale_to means 0~9
+calc_coordinates <- function(seq, pattern="[ST]Q", gap=181, scale_to=5)
 {
 	locs <- unlist(gregexpr(pattern, seq))
 	locsLen <- length(locs)
@@ -52,14 +53,12 @@ calc_coordinates <- function(seq, pattern="[ST]Q", gap=181, scale_to=10)
 		seqLen <- nchar(seq)
 		locs <- c(-gap, locs, gap+seqLen)
 		scaleFactor <- gap / scale_to
-		# plot(x = scale_to, y = scale_to, xlim=c(0, scale_to), ylim=c(0, scale_to))
 		for (i in 2:(locsLen+1))
 		{
 			currX <- locs[i] - locs[i-1]
 			currY <- locs[i+1] - locs[i]
-			currX <- ifelse(currX > gap, scale_to, round(currX/scaleFactor))
-			currY <- ifelse(currY > gap, scale_to, round(currY/scaleFactor))
-		# 	points(x = currX, y = currY)
+			currX <- ifelse(currX >= gap, scale_to-1, floor(currX/scaleFactor))
+			currY <- ifelse(currY >= gap, scale_to-1, floor(currY/scaleFactor))
 			result <- paste(c(result,currX,",",currY,";"), sep="", collapse="")
 		}
 		return(result)
