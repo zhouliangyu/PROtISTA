@@ -105,6 +105,30 @@ trim_last_asterisk <- function(seq)
 	return (ifelse(lastChar == "*", substr(seq, 1, seqLen-1), seq))
 }
 
+# parse coordinates to (normalized) vector
+parse_coordinate_to_vec <- function(coordinateString, matSize=5)
+{
+	splitted <- unlist(strsplit(coordinateString, ";"))
+	result <- matrix(rep(0, matSize*matSize), ncol=matSize)
+	for (i in splitted)
+	{
+		secondSplitted <- unlist(strsplit(i, ","))
+		result[as.integer(secondSplitted[1])+1, as.integer(secondSplitted[2])+1] =
+			result[as.integer(secondSplitted[1])+1, as.integer(secondSplitted[2])+1] + 1
+	}
+	result <- result / sum(result)
+	dim(result) <- NULL
+	return(result)
+}
+
 # ===== temporary code ======
+for (i in 1:nrow(df))
+{
+	if (i == 1)
+		temp <- parse_coordinate_to_vec(df$coordinates[i], matSize=5)
+	else
+		temp <- rbind(temp, parse_coordinate_to_vec(df$coordinates[i],matSize=5))
+}
+
 
 
