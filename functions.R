@@ -40,7 +40,7 @@ aa_num_pos <- function(seq, pattern="[ST]Q")
 # calculate relative coordinates
 # gap is 181 for budding yeast, 190 for Ce and 155 for mouse
 # coordinate format: x1,y1;x2,y2;...xn,yn;
-# for the ease of python, scale_to means 0~9
+# for the ease of python, scale_to=10 means 0~9
 calc_coordinates <- function(seq, pattern="[ST]Q", gap=181, scale_to=5)
 {
 	locs <- unlist(gregexpr(pattern, seq))
@@ -116,12 +116,14 @@ parse_coordinate_to_vec <- function(coordinateString, matSize=5)
 		result[as.integer(secondSplitted[1])+1, as.integer(secondSplitted[2])+1] =
 			result[as.integer(secondSplitted[1])+1, as.integer(secondSplitted[2])+1] + 1
 	}
-	result <- result / sum(result)
+	result <- result / sum(result) # normalize the matrix to have sum 1
+	# result <- result != 0 # only return the pattern
 	dim(result) <- NULL
 	return(result)
 }
 
 # ===== temporary code ======
+df <- read.csv("./yeast_test_parsing_df.csv", header=TRUE, stringsAsFactors=FALSE)
 for (i in 1:nrow(df))
 {
 	if (i == 1)
@@ -129,6 +131,11 @@ for (i in 1:nrow(df))
 	else
 		temp <- rbind(temp, parse_coordinate_to_vec(df$coordinates[i],matSize=5))
 }
-
+# convert the result to dataframe
+temp1 <- as.data.frame(temp)
+# combine the gene names to the result dataframe
+temp2 <- data.frame(name=df$name, temp1)
+# convert all logical value to 1 and 0, this is for only the patterns
+# temp2[2:26] <- temp2[2:26]*1
 
 
