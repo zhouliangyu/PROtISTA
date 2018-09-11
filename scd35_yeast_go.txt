@@ -1,0 +1,56 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20171205)
+Annotation Version and Release Date:	PANTHER version 13.1 Released 2018-02-03
+Analyzed List:	upload_1 (Saccharomyces cerevisiae)
+Reference List:	Saccharomyces cerevisiae (all genes in database)
+Test Type:	FISHER
+PANTHER GO-Slim Biological Process	Saccharomyces cerevisiae - REFLIST (6722)	upload_1 (334)	upload_1 (expected)	upload_1 (over/under)	upload_1 (fold Enrichment)	upload_1 (raw P-value)	upload_1 (FDR)
+meiosis (GO:0007126)	29	9	1.44	+	6.25	5.16E-05	5.92E-04
+reproduction (GO:0000003)	40	10	1.99	+	5.03	9.32E-05	8.90E-04
+nuclear transport (GO:0051169)	74	16	3.68	+	4.35	3.89E-06	7.43E-05
+DNA recombination (GO:0006310)	33	7	1.64	+	4.27	2.41E-03	1.30E-02
+cytoskeleton organization (GO:0007010)	77	16	3.83	+	4.18	6.06E-06	9.47E-05
+developmental process (GO:0032502)	25	5	1.24	+	4.03	1.24E-02	4.73E-02
+chromosome segregation (GO:0007059)	39	7	1.94	+	3.61	5.44E-03	2.46E-02
+regulation of catalytic activity (GO:0050790)	35	6	1.74	+	3.45	1.19E-02	4.76E-02
+response to external stimulus (GO:0009605)	35	6	1.74	+	3.45	1.19E-02	4.65E-02
+intracellular signal transduction (GO:0035556)	103	16	5.12	+	3.13	1.39E-04	1.09E-03
+RNA localization (GO:0006403)	52	8	2.58	+	3.10	6.89E-03	2.96E-02
+protein targeting (GO:0006605)	110	16	5.47	+	2.93	2.73E-04	1.88E-03
+endocytosis (GO:0006897)	76	11	3.78	+	2.91	2.52E-03	1.27E-02
+signal transduction (GO:0007165)	122	17	6.06	+	2.80	2.79E-04	1.85E-03
+cell communication (GO:0007154)	146	20	7.25	+	2.76	1.01E-04	8.72E-04
+DNA replication (GO:0006260)	67	9	3.33	+	2.70	9.29E-03	3.80E-02
+regulation of phosphate metabolic process (GO:0019220)	82	11	4.07	+	2.70	4.26E-03	2.03E-02
+response to stress (GO:0006950)	219	29	10.88	+	2.67	5.05E-06	8.69E-05
+regulation of cell cycle (GO:0051726)	76	10	3.78	+	2.65	7.11E-03	2.98E-02
+DNA metabolic process (GO:0006259)	168	22	8.35	+	2.64	8.37E-05	8.47E-04
+regulation of biological process (GO:0050789)	284	37	14.11	+	2.62	4.53E-07	1.30E-05
+mRNA processing (GO:0006397)	108	14	5.37	+	2.61	1.78E-03	9.86E-03
+cell cycle (GO:0007049)	229	29	11.38	+	2.55	1.39E-05	1.84E-04
+DNA repair (GO:0006281)	96	12	4.77	+	2.52	4.83E-03	2.25E-02
+biological regulation (GO:0065007)	378	47	18.78	+	2.50	4.04E-08	1.74E-06
+protein localization (GO:0008104)	224	27	11.13	+	2.43	5.32E-05	5.72E-04
+response to stimulus (GO:0050896)	372	44	18.48	+	2.38	3.08E-07	1.06E-05
+intracellular protein transport (GO:0006886)	261	30	12.97	+	2.31	5.07E-05	6.23E-04
+protein transport (GO:0015031)	272	30	13.52	+	2.22	1.27E-04	1.04E-03
+vesicle-mediated transport (GO:0016192)	262	28	13.02	+	2.15	3.09E-04	1.97E-03
+transcription from RNA polymerase II promoter (GO:0006366)	160	17	7.95	+	2.14	5.83E-03	2.57E-02
+organelle organization (GO:0006996)	494	49	24.55	+	2.00	7.70E-06	1.10E-04
+cellular component organization (GO:0016043)	678	65	33.69	+	1.93	5.80E-07	1.42E-05
+cellular component organization or biogenesis (GO:0071840)	831	73	41.29	+	1.77	3.08E-06	6.63E-05
+transport (GO:0006810)	621	53	30.86	+	1.72	1.76E-04	1.32E-03
+localization (GO:0051179)	671	57	33.34	+	1.71	9.81E-05	8.88E-04
+phosphate-containing compound metabolic process (GO:0006796)	622	52	30.91	+	1.68	3.71E-04	2.28E-03
+catabolic process (GO:0009056)	483	40	24.00	+	1.67	2.51E-03	1.31E-02
+RNA metabolic process (GO:0016070)	550	45	27.33	+	1.65	1.61E-03	9.25E-03
+cellular process (GO:0009987)	2424	189	120.44	+	1.57	1.27E-13	1.09E-11
+nucleobase-containing compound metabolic process (GO:0006139)	1025	77	50.93	+	1.51	2.64E-04	1.89E-03
+metabolic process (GO:0008152)	2118	155	105.24	+	1.47	3.78E-08	2.17E-06
+nitrogen compound metabolic process (GO:0006807)	1102	76	54.76	+	1.39	3.30E-03	1.62E-02
+primary metabolic process (GO:0044238)	1787	119	88.79	+	1.34	3.95E-04	2.34E-03
+Unclassified (UNCLASSIFIED)	3804	115	189.01	-	.61	2.83E-15	4.87E-13

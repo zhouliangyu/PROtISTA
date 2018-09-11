@@ -1,0 +1,50 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20171205)
+Annotation Version and Release Date:	PANTHER version 13.1 Released 2018-02-03
+Analyzed List:	upload_1 (Caenorhabditis elegans)
+Reference List:	Caenorhabditis elegans (all genes in database)
+Test Type:	FISHER
+PANTHER GO-Slim Biological Process	Caenorhabditis elegans - REFLIST (20057)	upload_1 (202)	upload_1 (expected)	upload_1 (over/under)	upload_1 (fold Enrichment)	upload_1 (raw P-value)	upload_1 (FDR)
+chromosome segregation (GO:0007059)	56	5	.56	+	8.87	3.55E-04	3.78E-03
+meiosis (GO:0007126)	45	4	.45	+	8.83	1.43E-03	1.19E-02
+cell adhesion (GO:0007155)	54	4	.54	+	7.35	2.67E-03	2.00E-02
+biological adhesion (GO:0022610)	54	4	.54	+	7.35	2.67E-03	1.93E-02
+cellular component morphogenesis (GO:0032989)	112	8	1.13	+	7.09	2.75E-05	4.74E-04
+MAPK cascade (GO:0000165)	107	6	1.08	+	5.57	9.52E-04	8.88E-03
+regulation of cell cycle (GO:0051726)	102	5	1.03	+	4.87	4.39E-03	2.89E-02
+regulation of phosphate metabolic process (GO:0019220)	215	10	2.17	+	4.62	9.09E-05	1.20E-03
+regulation of catalytic activity (GO:0050790)	157	7	1.58	+	4.43	1.31E-03	1.18E-02
+cell differentiation (GO:0030154)	135	6	1.36	+	4.41	2.94E-03	2.06E-02
+cellular component movement (GO:0006928)	158	7	1.59	+	4.40	1.36E-03	1.17E-02
+intracellular signal transduction (GO:0035556)	394	17	3.97	+	4.28	8.53E-07	2.39E-05
+regulation of molecular function (GO:0065009)	175	7	1.76	+	3.97	2.38E-03	1.84E-02
+regulation of transcription from RNA polymerase II promoter (GO:0006357)	234	9	2.36	+	3.82	7.70E-04	7.84E-03
+developmental process (GO:0032502)	465	17	4.68	+	3.63	7.25E-06	1.35E-04
+regulation of nucleobase-containing compound metabolic process (GO:0019219)	257	9	2.59	+	3.48	1.45E-03	1.16E-02
+cellular component organization (GO:0016043)	898	30	9.04	+	3.32	1.28E-08	7.15E-07
+DNA metabolic process (GO:0006259)	213	7	2.15	+	3.26	6.68E-03	4.05E-02
+cellular component organization or biogenesis (GO:0071840)	1007	31	10.14	+	3.06	4.37E-08	1.96E-06
+transcription, DNA-dependent (GO:0006351)	455	14	4.58	+	3.06	2.72E-04	3.21E-03
+phosphate-containing compound metabolic process (GO:0006796)	1011	31	10.18	+	3.04	4.76E-08	1.78E-06
+cell cycle (GO:0007049)	397	12	4.00	+	3.00	8.63E-04	8.40E-03
+signal transduction (GO:0007165)	849	25	8.55	+	2.92	2.19E-06	4.91E-05
+protein localization (GO:0008104)	280	8	2.82	+	2.84	8.48E-03	4.87E-02
+cell communication (GO:0007154)	957	27	9.64	+	2.80	1.83E-06	4.54E-05
+transcription from RNA polymerase II promoter (GO:0006366)	356	10	3.59	+	2.79	3.82E-03	2.60E-02
+RNA metabolic process (GO:0016070)	840	22	8.46	+	2.60	5.28E-05	8.44E-04
+nucleobase-containing compound metabolic process (GO:0006139)	1510	37	15.21	+	2.43	6.30E-07	2.02E-05
+biosynthetic process (GO:0009058)	1028	25	10.35	+	2.41	7.15E-05	1.07E-03
+nitrogen compound metabolic process (GO:0006807)	1413	34	14.23	+	2.39	2.75E-06	5.61E-05
+localization (GO:0051179)	1148	25	11.56	+	2.16	3.53E-04	3.96E-03
+cellular process (GO:0009987)	4274	91	43.04	+	2.11	8.02E-14	8.98E-12
+biological regulation (GO:0065007)	1410	29	14.20	+	2.04	2.71E-04	3.37E-03
+metabolic process (GO:0008152)	3682	75	37.08	+	2.02	4.26E-10	3.18E-08
+transport (GO:0006810)	1035	20	10.42	+	1.92	5.91E-03	3.78E-02
+regulation of biological process (GO:0050789)	1134	21	11.42	+	1.84	8.42E-03	4.96E-02
+response to stimulus (GO:0050896)	1465	26	14.75	+	1.76	6.06E-03	3.77E-02
+primary metabolic process (GO:0044238)	2940	51	29.61	+	1.72	8.54E-05	1.20E-03
+Unclassified (UNCLASSIFIED)	13969	83	140.69	-	.59	8.57E-17	1.92E-14
